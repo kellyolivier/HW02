@@ -1,6 +1,7 @@
+#include <string>
 #ifndef ARRAY_BASED_PD_H_
 #define ARRAY_BASED_PD_H_
-#include <string>
+
 
 /** Specification file for the array-based phone directory.
  */
@@ -46,20 +47,45 @@ public:
 		@return The person's name or an empty string if not in
 		the directory
 		*/
-	std::string remove_entry(const std::string& name);
+	std::string remove_entry(const std::string& name)
+	{
+		int found = find(name);
+		//////CONFUSED
+	}
 
 	/** Writes the contents of the directory to the data file.
+
+	1.	Call function find to determine if name is already in the directory
+	2.	If name is already in directory
+	3.	         Remove (overwrite) entry from the array and modify the size
+	4.	         Return number
+	5.	Else
+	6.	        Return empty string
+
+
 	 */
 	void save();
 
 private:
-	class Directory_Entry /* Exercise 1.6: Please complete the definition of the Directory_Entry class here. - Ed/Kent */
+	class Directory_Entry
 	{
 	public:
-	
+		Directory_Entry() {} // Default no-argument constructor 
+		Directory_Entry(std::string the_name, std::string the_number) {
+			// constructor not implemented yet
+		}
+		std::string get_name() const {
+			return ""; // method not implemented yet
+		}
+		std::string get_number() const {
+			return ""; // method not implemented yet
+		}
+		void set_number(const std::string& new_number) {
+			// method not implemented yet
+		}
 	private:
-
 	};
+
 
 	// Private Functions
 	/** Searches the array of directory entries for the name.

@@ -152,6 +152,10 @@ void Phone_Directory::add(const string& name,
 	size++;
 }
 
+	void Phone_Directory::remove_entry(int index)
+	{
+	}
+
 /** Create a new array of directory entries with twice the capacity
 	of the current one.
 	*/
