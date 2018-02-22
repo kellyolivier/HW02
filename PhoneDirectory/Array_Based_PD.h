@@ -47,23 +47,8 @@ public:
 		@return The person's name or an empty string if not in
 		the directory
 		*/
-	std::string remove_entry(const std::string& name)
-	{
-		int found = find(name);
-		//////CONFUSED
-	}
-
-	/** Writes the contents of the directory to the data file.
-
-	1.	Call function find to determine if name is already in the directory
-	2.	If name is already in directory
-	3.	         Remove (overwrite) entry from the array and modify the size
-	4.	         Return number
-	5.	Else
-	6.	        Return empty string
-
-
-	 */
+	std::string remove_entry(const std::string& name);  
+	
 	void save();
 
 private:
@@ -72,19 +57,23 @@ private:
 	public:
 		Directory_Entry() {} // Default no-argument constructor 
 		Directory_Entry(std::string the_name, std::string the_number) {
-			// constructor not implemented yet
+			name = the_name;
+			number = the_number;
 		}
 		std::string get_name() const {
-			return ""; // method not implemented yet
+			return name;
 		}
 		std::string get_number() const {
-			return ""; // method not implemented yet
+			return number;
 		}
 		void set_number(const std::string& new_number) {
-			// method not implemented yet
+			number = new_number;
 		}
 	private:
+		std::string name;
+		std::string number;
 	};
+
 
 
 	// Private Functions
